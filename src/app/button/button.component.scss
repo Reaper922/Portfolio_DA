@@ -1,0 +1,38 @@
+@import '/src/variables.scss';
+
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    color: $col-primary;
+    font-size: $fs-24;
+    text-decoration: none;
+    background: white;
+    border: 2px solid $col-primary;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.14s ease-in-out;
+    overflow: hidden;
+
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 200px;
+    //     width: 300px;
+    //     background: red;
+    //     transform: rotate(-45deg);
+    // }
+
+    &:hover {
+        transform: scale(1.1);
+        color: white;
+        background: #5988FF;
+        background-image: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%)
+    }
+
+    &:active {
+        background: $col-primary-dark;
+    }
+}
