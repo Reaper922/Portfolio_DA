@@ -4,6 +4,12 @@
 .projects-area {
     padding-top: $area-spacing-md;
     padding-bottom: $area-spacing-md;
+
+    p {
+        font-size: $fs-24;
+        padding-top: 35px;
+        padding-bottom: $area-spacing-md;
+    }
 }
 
 .projects-container {
@@ -18,5 +24,14 @@
     .projects-area {
         padding-top: $area-spacing-sm;
         padding-bottom: $area-spacing-sm;
+
+        p {
+            font-size: $fs-18;
+            padding-bottom: $area-spacing-sm;
+        }
+    }
+
+    .projects-container {
+        gap: 100px;
     }
 }
