@@ -1,0 +1,22 @@
+@import '/src/variables.scss';
+
+
+.projects-area {
+    padding-top: $area-spacing-md;
+    padding-bottom: $area-spacing-md;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
+    .projects-area {
+        padding-top: $area-spacing-sm;
+        padding-bottom: $area-spacing-sm;
+    }
+}

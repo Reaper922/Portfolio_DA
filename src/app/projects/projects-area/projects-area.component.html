@@ -1,0 +1,11 @@
+<section class="container projects-area">
+    <h3>My Work</h3>
+    <p>This page is a sample of my work - please feel free to try them out.</p>
+    <div class="projects-container">
+        <app-project
+            *ngFor="let project of projects; let i = index;"
+            [project]="project"
+            [isSecondElement]="(i % 2)"
+        ></app-project>
+    </div>
+</section>
