@@ -1,0 +1,59 @@
+@import '/src/variables.scss';
+
+
+.introduction-area {
+    display: flex;
+    gap: 75px;
+    padding-top: $area-spacing-md;
+    padding-bottom: $area-spacing-md;
+
+    h2 {
+        flex-basis: 568px;
+        flex-shrink: 0;
+    }
+}
+
+.introduction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: justify;
+
+    p {
+        font-size: $fs-24;
+        user-select: none;
+    }
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-lg) {
+    .introduction-area {
+        flex-direction: column;
+
+        h2 {
+            flex-basis: auto;
+            flex-shrink: 1;
+        }
+    }
+
+    .introduction-container {
+        align-items: flex-start;
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: $m-mobile-md) {
+    .introduction-area {
+        gap: 35px;
+        padding-top: $area-spacing-sm;
+        padding-bottom: $area-spacing-sm;
+    }
+
+    .introduction-container {
+        p {
+            font-size: $fs-18;
+        }
+    }
+}
