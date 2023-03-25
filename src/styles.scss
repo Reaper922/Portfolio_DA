@@ -18,7 +18,7 @@
     font-family: 'Montserrat';
 }
 
-body {
+body, p {
     margin: 0;
 }
 
@@ -27,8 +27,63 @@ body {
 }
 
 
-@media screen and (max-width: $m-mobile) {
+// Headings
+@mixin heading-style($font: 'Baloo2') {
+    margin: 0;
+    font-family: $font;
+    font-weight: 800;
+    color: $col-primary;
+    line-height: 1;
+    user-select: none
+}
+
+h1 {
+    @include heading-style;
+    font-size: $fs-h1;
+}
+
+h2 {
+    @include heading-style;
+    font-size: $fs-h2;
+}
+
+h3 {
+    @include heading-style;
+    font-size: $fs-h3;
+}
+
+h4 {
+    @include heading-style;
+    font-size: $fs-h4;
+}
+
+h5 {
+    @include heading-style;
+    font-size: $fs-h5;
+}
+
+h6 {
+    @include heading-style('Montserrat');
+    font-size: $fs-h6;
+}
+
+.fs-body {
+    @include heading-style('Montserrat');
+    font-size: $fs-body;
+} 
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
     .container {
         padding: 0 24px;
+    }
+
+    h2 {
+        font-size: 64px;
+    }
+
+    h3 {
+        font-size: 64px;
     }
 }
