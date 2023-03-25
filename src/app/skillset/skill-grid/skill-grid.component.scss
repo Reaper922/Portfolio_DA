@@ -1,0 +1,60 @@
+@import '/src/variables.scss';
+
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    justify-items: center;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    color: white;
+    text-align: center;
+    user-select: none;
+    transition: transform 0.14s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        font-weight: 600;
+    }
+
+    img {
+        height: 75px;
+    }
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
+    .skill-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skill {
+        img {
+            height: 60px;
+        }
+
+        &:last-child {
+            grid-column: 1/4;
+        }
+    }
+}
+
+@media screen and (max-width: $m-mobile-sm) {
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .skill:last-child {
+        grid-column: unset;
+    }
+}
