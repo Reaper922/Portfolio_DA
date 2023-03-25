@@ -1,0 +1,11 @@
+<div class="project-container" [class.odd]="isSecondElement">
+    <img [src]="project.prevImageUrl" alt="Project Preview Image" draggable="false">
+    <div>
+        <div class="description-container">
+            <h4>{{ project.title }}</h4>
+            <p class="project-stack">{{ project.stack }}</p>
+            <p>{{ project.description }}</p>
+        </div>
+        <app-button btnText="GitHub" [href]="project.github"></app-button>
+    </div>
+</div>

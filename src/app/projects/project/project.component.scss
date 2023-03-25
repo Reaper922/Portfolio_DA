@@ -1,0 +1,50 @@
+@import '/src/variables.scss';
+
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 75px;
+
+    img {
+        width: 620px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.project-stack {
+    color: $col-primary;
+    font-size: $fs-24;
+}
+
+.odd:nth-child(odd) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-lg) {
+    .project-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 45px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .odd:nth-child(odd) {
+        flex-direction: column;
+        text-align: left;
+    }
+}
