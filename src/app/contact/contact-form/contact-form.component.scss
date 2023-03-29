@@ -1,0 +1,73 @@
+@import '/src/variables.scss';
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+
+    input,
+    textarea {
+        flex: 1;
+        width: 100%;
+        border: 1px solid $col-primary;
+        border-radius: 10px;
+        padding: 15px 22px;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $col-primary;
+            outline: 1px solid $col-primary;
+        }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        opacity: 0;
+        transition: opacity 0.24s ease-in-out;
+    }
+
+    input:focus::placeholder,
+    textarea:focus::placeholder {
+        opacity: 1;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    label {
+        position: absolute;
+        top: 10px;
+        left: 25px;
+        padding: 5px;
+        background: linear-gradient(transparent 25%, white 45%, white 65%, transparent 99%);
+        transition: all 0.24s ease-in-out;
+        pointer-events: none;
+    }
+
+    input:focus+label,
+    textarea:focus+label,
+    input:not(:placeholder-shown)+label,
+    textarea:not(:placeholder-shown)+label {
+        top: -15px;
+    }
+
+    p {
+        position: absolute;
+        left: 25px;
+        bottom: -18px;
+        display: none;
+        font-size: $fs-12;
+        color: $col-error;
+    }
+}
+
+app-button {
+    margin: auto;
+}

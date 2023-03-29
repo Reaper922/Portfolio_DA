@@ -1,0 +1,24 @@
+<form autocomplete="off">
+    <!-- Name -->
+    <div class="input-container">
+        <input type="text" name="name" id="name" #name placeholder="Please enter your name." required autocomplete="new-password">
+        <label for="name">Your name</label>
+        <p id="name-error">Your name is required.</p>
+    </div>
+
+    <!-- Email -->
+    <div class="input-container">
+        <input type="email" name="email" id="email" #email placeholder="Please enter your email." required>
+        <label for="email">Your email</label>
+        <p id="email-error">Your valid email is required.</p>
+    </div>
+
+    <!-- Message -->
+    <div class="input-container">
+        <textarea name="message" id="message" #message cols="30" rows="10" placeholder="Please enter your message." required></textarea>
+        <label for="message">Your message</label>
+        <p id="message-error">Your message is required.</p>
+    </div>
+
+    <app-button [href]="'#'" [btnText]="'Say hello ;)'"></app-button>
+</form>
