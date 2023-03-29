@@ -1,0 +1,92 @@
+@import '/src/variables.scss';
+
+
+.burger-menu-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    overflow: visible;
+    cursor: pointer;
+
+    div {
+        width: 100%;
+        height: 4px;
+        background: $col-primary;
+        border-radius: 4px;
+        transition: transform 0.24s ease-in-out;
+    }
+}
+
+.button-open {
+    div:nth-child(1) {
+        height: 3px;
+        transform:
+            translateY(13.5px)
+            scale(1.3)
+            rotate(50deg);
+    }
+
+    div:nth-child(2) {
+        transform:
+            scaleX(0.1);
+    }
+
+    div:nth-child(3) {
+        height: 3px;
+        transform:
+            translateY(-13.5px)
+            scale(1.3)
+            rotate(-50deg);
+    }
+}
+
+.logo-menu {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+.navmenu {
+    position: fixed;
+    top: 0;
+    left: 200dvw;
+    right: -200dvw;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(179.99deg, rgba(255, 255, 255, 0.99) 12.89%, rgba(234, 240, 255, 0.99) 91.39%);
+    opacity: 0.5;
+    transition: all 0.44s ease-in-out;
+
+}
+
+.menu-open {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+        padding: 8px;
+        color: $col-primary;
+        font-size: $fs-24;
+        text-decoration: none;
+
+        &:hover {
+            font-weight: 800;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<!-- Menu Button -->
+<div class="burger-menu-button"
+    (click)="toggleMenu()"
+    [class.button-open]="isMenuOpen">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Menu -->
+<div class="navmenu"
+    [class.menu-open]="isMenuOpen">
+    <a href="#hero" (click)="toggleMenu()">
+        <img src="/assets/img/logo_blue.svg" alt="Logo" class="logo-menu" draggable="false">
+    </a>
+    <ul>
+        <li><a href="#introduction" (click)="toggleMenu()">About me</a></li>
+        <li><a href="#skillset" (click)="toggleMenu()">Skillset</a></li>
+        <li><a href="#projects" (click)="toggleMenu()">My work</a></li>
+        <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+    </ul>
+</div>
