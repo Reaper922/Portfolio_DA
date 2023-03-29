@@ -1,0 +1,20 @@
+@import '/src/variables.scss';
+
+
+ul {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+        color: $col-primary;
+        font-size: $fs-24;
+        text-decoration: none;
+
+        &:hover {
+            font-weight: 800;
+        }
+    }
+}
