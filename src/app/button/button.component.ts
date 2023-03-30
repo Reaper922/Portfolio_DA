@@ -8,9 +8,4 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() btnText: string = 'Button works!';
   @Input() href: string = '#';
-
-  ngOnChange() {
-    console.log(this.href);
-
-  }
 }

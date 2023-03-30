@@ -7,32 +7,46 @@
     color: $col-primary;
     font-size: $fs-24;
     text-decoration: none;
-    background: white;
     border: 2px solid $col-primary;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.14s ease-in-out;
+    background: white linear-gradient(300deg, transparent 49%, $col-primary 51%);
+    background-position: 100% 100%;
+    background-size: 400% 400%;
+    transition: all 0.24s ease-in-out;
+    white-space: nowrap;
     overflow: hidden;
 
-    // &:before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     height: 200px;
-    //     width: 300px;
-    //     background: red;
-    //     transform: rotate(-45deg);
-    // }
-
-    &:hover {
+    &:hover,
+    &:focus {
         transform: scale(1.1);
         color: white;
-        background: #5988FF;
-        background-image: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%)
+        outline: 2px solid $col-primary;
+        background-color: $col-primary;
+        animation: move 0.24s forwards;
     }
 
     &:active {
         background: $col-primary-dark;
+    }
+}
+
+
+// Animations
+@keyframes move {
+    0% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
+    .btn-primary {
+        padding: 12px 24px
     }
 }
