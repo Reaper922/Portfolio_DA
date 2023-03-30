@@ -8,7 +8,11 @@ footer {
     padding-top: 120px;
     padding-bottom: 60px;
     color: white;
-    background: radial-gradient(71.18% 335.57% at 28.82% -124.4%, $col-primary 6.25%, $col-primary 51.56%, $col-primary-dark 100%);
+    background: radial-gradient(
+        71.18% 335.57% at 28.82% -124.4%,
+        $col-primary 6.25%,
+        $col-primary 51.56%,
+        $col-primary-dark 100%);
 
     a {
         align-self: center;
@@ -30,10 +34,9 @@ footer {
         margin: 0;
         font-size: $fs-24;
         text-align: center;
-        user-select: none;
     }
 
-    app-social-media {
+    app-social-media-footer {
         justify-self: flex-end;
     }
 }
@@ -55,7 +58,7 @@ footer {
             font-size: $fs-18;
         }
 
-        app-social-media {
+        app-social-media-footer {
             justify-self: unset;
         }
     }
