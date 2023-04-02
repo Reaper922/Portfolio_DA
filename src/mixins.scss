@@ -1,0 +1,19 @@
+@mixin app-bubble(
+        $size: 100px,
+        $top: unset,
+        $left: unset,
+        $right: unset,
+        $bottom: unset,
+        $index: -1) {
+    position: absolute;
+    width: $size;
+    height: $size;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    border-radius: 100%;
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+    z-index: $index;
+    transition: all 0.24s ease-in-out;
+}
