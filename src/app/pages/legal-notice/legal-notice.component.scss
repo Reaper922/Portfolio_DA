@@ -1,0 +1,20 @@
+@import '/src/variables.scss';
+
+
+p {
+    text-align: justify;
+}
+
+.legal-notice {
+    padding-top: $area-spacing-md;
+    padding-bottom: $area-spacing-md;
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
+    .legal-notice {
+        padding-top: $area-spacing-sm;
+        padding-bottom: $area-spacing-sm;
+    }
+}
