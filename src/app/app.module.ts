@@ -18,6 +18,9 @@ import { BubbleComponent } from './bubble/bubble.component';
 import { ContactAreaComponent } from './contact/contact-area/contact-area.component';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component';
 import { NavmenuComponent } from './hero/navmenu/navmenu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './pages/main/main.component';
+import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +40,14 @@ import { NavmenuComponent } from './hero/navmenu/navmenu.component';
     ContactAreaComponent,
     ContactFormComponent,
     NavmenuComponent,
+    MainComponent,
+    LegalNoticeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
