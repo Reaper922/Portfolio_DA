@@ -1,6 +1,7 @@
 @import '/src/variables.scss';
 
 
+// Fonts
 @font-face {
     font-family: 'Baloo2';
     src: url('/assets/fonts/baloo2/Baloo2-ExtraBold.ttf');
@@ -18,12 +19,42 @@
     font-family: 'Montserrat';
 }
 
-body, p {
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+p {
     margin: 0;
 }
 
+p {
+    user-select: none;
+}
+
+a:focus {
+    border-radius: 5px;
+}
+
 .container {
+    position: relative;
     padding: 0 100px;
+}
+
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $col-primary;
+    border-radius: 5px;
 }
 
 
@@ -70,7 +101,7 @@ h6 {
 .fs-body {
     @include heading-style('Montserrat');
     font-size: $fs-body;
-} 
+}
 
 
 // Media
@@ -85,5 +116,23 @@ h6 {
 
     h3 {
         font-size: 64px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: $m-mobile-sm) {
+    h2 {
+        font-size: $fs-h4;
+    }
+
+    h3 {
+        font-size: $fs-h4;
     }
 }
