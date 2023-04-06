@@ -3,5 +3,6 @@ export type project = {
     stack: string,
     description: string,
     github: string,
+    projectUrl: string;
     prevImageUrl: string
 }
