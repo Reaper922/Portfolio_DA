@@ -24,6 +24,11 @@ form {
             border: 1px solid $col-primary;
             outline: 1px solid $col-primary;
         }
+
+        &:-internal-autofill-selected {
+            appearance: none;
+            background: transparent;
+        }
     }
 
     input::placeholder,
@@ -68,6 +73,66 @@ form {
     }
 }
 
-app-button {
+button {
     margin: auto;
+}
+
+
+.btn-primary {
+    display: inline-block;
+    width: max-content;
+    padding: 15px 30px;
+    color: $col-primary;
+    font-size: $fs-24;
+    text-decoration: none;
+    border: 2px solid $col-primary;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    background: white linear-gradient(300deg, transparent 49%, $col-primary 51%);
+    background-position: 100% 100%;
+    background-size: 400% 400%;
+    transition: all 0.24s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover:enabled,
+    &:focus:enabled {
+        transform: scale(1.1);
+        color: white;
+        outline: 2px solid $col-primary;
+        background-color: $col-primary;
+        animation: move 0.24s forwards;
+    }
+
+    &:active:enabled {
+        background: $col-primary-dark;
+    }
+
+    &:disabled {
+        color: gray;
+        border: 2px solid gray;
+        background-color: whitesmoke;
+        cursor: default;
+    }
+}
+
+
+// Animations
+@keyframes move {
+    0% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+// Media
+@media screen and (max-width: $m-mobile-md) {
+    .btn-primary {
+        padding: 12px 24px
+    }
 }
