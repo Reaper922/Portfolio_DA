@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() btnText: string = 'Button works!';
   @Input() href: string = '#';
+  @Input() target: string = '_self';
+  @Input() style: string = 'primary';
 }
