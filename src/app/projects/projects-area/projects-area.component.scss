@@ -1,11 +1,14 @@
 @import '/src/variables.scss';
+@import '/src/mixins.scss';
 
 
 .projects-area {
     padding-top: $area-spacing-md;
     padding-bottom: $area-spacing-md;
+    overflow-x: clip;
 
     p {
+        width: 620px;
         font-size: $fs-24;
         padding-top: 35px;
         padding-bottom: $area-spacing-md;
@@ -18,8 +21,79 @@
     gap: 140px;
 }
 
+app-bubble:nth-of-type(1) {
+    @include app-bubble(
+        $size: 110px,
+        $top: 50px,
+        $right: 40%);
+}
+
+app-bubble:nth-of-type(2) {
+    @include app-bubble(
+        $size: 180px,
+        $top: 230px,
+        $right: 10%);
+}
+
+app-bubble:nth-of-type(3) {
+    @include app-bubble(
+        $size: 390px,
+        $top: 22%,
+        $left: -10%);
+}
+
+app-bubble:nth-of-type(4) {
+    @include app-bubble(
+        $size: 550px,
+        $top: 36%,
+        $right: -20%);
+}
+
+app-bubble:nth-of-type(5) {
+    @include app-bubble(
+        $size: 180px,
+        $top: 75%,
+        $left: 30%);
+}
+
 
 // Media
+@media screen and (max-width: $m-mobile-lg) {
+    .projects-area {
+        p {
+            width: auto;
+        }
+    }
+
+    app-bubble:nth-of-type(1) {
+        @include app-bubble(
+            $size: 110px,
+            $top: 50px,
+            $right: 25%);
+    }
+
+    app-bubble:nth-of-type(2) {
+        @include app-bubble(
+            $size: 180px,
+            $top: 280px,
+            $right: 6%)
+    }
+
+    app-bubble:nth-of-type(3) {
+        @include app-bubble(
+            $size: 250px,
+            $top: 15%,
+            $left: -10%);
+    }
+
+    app-bubble:nth-of-type(4) {
+        @include app-bubble(
+            $size: 450px,
+            $top: 36%,
+            $right: -20%);
+    }
+}
+
 @media screen and (max-width: $m-mobile-md) {
     .projects-area {
         padding-top: $area-spacing-sm;
@@ -33,5 +107,56 @@
 
     .projects-container {
         gap: 100px;
+    }
+
+    app-bubble:nth-of-type(1) {
+        @include app-bubble(
+            $size: 35px,
+            $top: 12px,
+            $right: 25%);
+    }
+
+    app-bubble:nth-of-type(2) {
+        @include app-bubble(
+            $size: 70px,
+            $top: 200px,
+            $right: 10%)
+    }
+
+    app-bubble:nth-of-type(3) {
+        @include app-bubble(
+            $size: 200px,
+            $top: 10%,
+            $left: -10%);
+    }
+
+    app-bubble:nth-of-type(4) {
+        @include app-bubble(
+            $size: 400px,
+            $top: 28%,
+            $right: -20%);
+    }
+
+    app-bubble:nth-of-type(5) {
+        @include app-bubble(
+            $size: 100px,
+            $top: 77%,
+            $left: 30%);
+    }
+}
+
+@media screen and (max-width: $m-mobile-md) {
+    app-bubble:nth-of-type(3) {
+        @include app-bubble(
+            $size: 150px,
+            $top: 10%,
+            $left: -10%);
+    }
+
+    app-bubble:nth-of-type(4) {
+        @include app-bubble(
+            $size: 200px,
+            $top: 30%,
+            $right: -20%);
     }
 }

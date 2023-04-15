@@ -19,26 +19,26 @@ export class ProjectsAreaComponent {
     {
       title: "Captain Clown Nose",
       stack: "JavaScript | HTML | CSS",
-      description: "A pirate themed jump and run game implemented using the object-oriented approach. Try your luck and collect all coins! ",
+      description: "A pirate themed jump and run game implemented using the object-oriented approach. Try your luck and collect all coins!",
       github: "https://github.com/Reaper922/PirateGame_DA",
       projectUrl: 'https://game.dennisammen.de',
-      prevImageUrl: "/assets/img/el_pollo_loco.jpg"
-    },
-    {
-      title: "Simple CRM",
-      stack: "Angular | TypeScript | HTML | CSS | Firebase",
-      description: "A very Simple Customer Relationship Management system working with CRUD functionality. ",
-      github: "https://www.github.com",
-      projectUrl: '',
-      prevImageUrl: "/assets/img/simple_crm.jpg"
+      prevImageUrl: "/assets/img/captain_clown_nose.jpg"
     },
     {
       title: "Pokedex",
       stack: "JavaScript | HTML | CSS | API",
-      description: "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-      github: "https://www.github.com",
-      projectUrl: '',
+      description: "A simple to use Pokedex App which fetches the data for all Pokemon of the first generation from the PokeAPI.",
+      github: "https://github.com/Reaper922/Pokedex_DA",
+      projectUrl: 'https://pokedex.dennisammen.de',
       prevImageUrl: "/assets/img/pokedex.jpg"
+    },
+    {
+      title: "CRM",
+      stack: "Angular | TypeScript | HTML | CSS | Firebase",
+      description: "Coming Soon",
+      github: "https://github.com/Reaper922/",
+      projectUrl: '',
+      prevImageUrl: "/assets/img/simple_crm.jpg"
     }
   ]
 }
