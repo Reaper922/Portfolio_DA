@@ -1,4 +1,5 @@
 @import '/src/variables.scss';
+@import '/src/mixins.scss';
 
 
 header {
@@ -23,86 +24,97 @@ app-navmenu {
 }
 
 .hero-container {
-    div:first-child {
-        background: lightblue;
-    }
-    div:last-child {
-        background: lightcoral;
-    }
-
     display: grid;
     grid-template-columns: minmax(20px, 800px) minmax(20px, 800px);
     position: absolute;
-    top: 100px;
     left: 0;
     right: 0;
     bottom: 0;
+    height: 80dvh;
     padding: 0 100px;
+    font-size: 2vw;
+
+    >div:first-of-type {
+        display: flex;
+    }
+
+    >div {
+        height: inherit;
+    }
 
     img {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        // object-position: bottom;
+        object-position: bottom;
+    }
+
+    p {
+        font-size: clamp(16px, 2.2em, $fs-64);
+        color: $col-primary;
+        margin-top: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: clamp(16px, 4.2em, $fs-h1);
+    }
+
+    h2 {
+        font-size: clamp(16px, 3.9em, $fs-h2);
     }
 }
 
-// .hero-container {
-//     position: absolute;
-//     // top: 20%;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     display: flex;
-//     justify-content: center;
-//     gap: 5vw;
-//     padding: 0 100px;
-// }
+.greeting {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
-// .greeting {
-//     display: flex;
-//     flex-direction: column;
-//     font-size: 3vw;
+    p {
+        text-align: center;
+    }
 
-//     p {
-//         font-size: clamp(16px, 2.2em, $fs-64);
-//         color: $col-primary;
-//         margin-top: 0;
-//         text-align: left;
-//     }
+    h1, h2 {
+        line-height: 0.8;
+    }
 
-//     h1 {
-//         font-size: clamp(16px, 4.2em, $fs-h1);
-//     }
+    .test {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: auto;
 
-//     h2 {
-//         font-size: clamp(16px, 3.9em, $fs-h2);
-//     }
-
-//     h2 {
-//         line-height: 0.6;
-//     }
-
-//     img {
-//         width: clamp(30vw, 30%, 60vw);
-//         // align-self: flex-end;
-//     }
-
-    
-//     // p {
-//     //     font-size: $fs-24;
-//     //     color: $col-primary;
-//     //     font-weight: 600;
-//     //     text-align: center;
-//     //     margin-top: 120px;
-//     //     margin-bottom: 10px;
-//     // }
-// }
+        p {
+            text-align: center;
+            font-size: $fs-24;
+            margin-bottom: 10px;
+        }
+    }
+}
 
 .line {
     align-self: center;
-    height: 100px;
     border-left: 3px solid $col-primary;
+    height: 200px;
+}
+
+app-bubble:nth-of-type(1) {
+    @include app-bubble(
+        $size: 55dvw,
+        $top: -20dvh,
+        $left: -10dvw,
+        $index: 0);
+}
+
+app-bubble:nth-of-type(2) {
+    @include app-bubble(
+        $size: 200px,
+        $left: 50%,
+        $bottom: 0,
+        $index: 1);
+        transform: translate(-50%, 50%);
 }
 
 
@@ -122,39 +134,74 @@ app-navmenu {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
-
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 48px;
         padding: 0 24px;
+
+        div {
+            height: auto;
+        }
+
+        img {
+            max-height: 55dvh;
+            max-width: 90dvw;
+            object-fit: contain;
+        }
     }
 
-    // .hero-container {
-    //     flex-direction: column-reverse;
-    //     align-items: center;
-    //     gap: 48px;
+    .greeting {
+        align-items: center;
+        font-size: 4vw;
+        padding: 0 24px;
 
-    //     img {
-    //         max-height: 55dvh;
-    //         max-width: 90dvw;
-    //         object-fit: contain;
-    //     }
-    // }
+        p {
+            color: white;
+            font-size: clamp(16px, 2.2em, 36px);
+        }
 
-    // .greeting {
-    //     align-items: center;
-    //     font-size: 4vw;
-    //     padding: 0 24px;
+        h1 {
+            color: white;
+            font-size: clamp(16px, 4.2em, 73px);
+        }
 
-    //     p {
-    //         font-size: clamp(16px, 2.2em, 36px);
-    //     }
+        h2 {
+            color: white;
+            font-size: clamp(16px, 3.9em, 67px);
+        }
 
-    //     h1 {
-    //         font-size: clamp(16px, 4.2em, 73px);
-    //     }
+        .test {
+            display: none;
+        }
+    }
 
-    //     h2 {
-    //         font-size: clamp(16px, 3.9em, 67px);
-    //     }
-    // }
+    app-bubble:nth-of-type(1) {
+        @include app-bubble(
+            $size: 110dvw,
+            $top: -15dvh,
+            $left: -200px,
+            $index: 0);
+        clip: rect(0px 400dvw 115dvh 0px);
+    }
+
+    app-bubble:nth-of-type(2) {
+        @include app-bubble(
+            $size: 150px,
+            $left: 50%,
+            $bottom: 0,
+            $index: 1);
+            transform: translate(-50%, 50%);
+    }
+}
+
+@media screen and (max-width: 620px) {
+    app-bubble:nth-of-type(1) {
+        @include app-bubble(
+            $size: 155dvw,
+            $top: -6dvh,
+            $left: -220px,
+            $index: 0);
+        clip: rect(0px 400dvw 106dvh 0px);
+    }
 }
