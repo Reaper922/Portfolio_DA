@@ -1,10 +1,11 @@
 @import '/src/variables.scss';
+@import '/src/mixins.scss';
 
 
 .introduction-area {
     display: flex;
     gap: 75px;
-    padding-top: $area-spacing-md;
+    padding-top: 180px;
     padding-bottom: $area-spacing-md;
 
     h2 {
@@ -24,6 +25,17 @@
         font-size: $fs-24;
         user-select: none;
     }
+}
+
+app-button {
+    margin: auto;
+}
+
+app-bubble {
+    @include app-bubble(
+        $size: 80px,
+        $top: 60px,
+        $right: 25%);
 }
 
 
@@ -47,7 +59,7 @@
 @media screen and (max-width: $m-mobile-md) {
     .introduction-area {
         gap: 35px;
-        padding-top: $area-spacing-sm;
+        padding-top: 150px;
         padding-bottom: $area-spacing-sm;
     }
 
@@ -55,5 +67,12 @@
         p {
             font-size: $fs-18;
         }
+    }
+
+    app-bubble {
+        @include app-bubble(
+            $size: 60px,
+            $top: 45px,
+            $right: 8%);
     }
 }
