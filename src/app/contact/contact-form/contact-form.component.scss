@@ -2,6 +2,7 @@
 
 
 form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -117,6 +118,21 @@ button {
     }
 }
 
+.mail-bubble {
+    position: absolute;
+    right: 50%;
+    bottom: 150px;
+    display: none;
+    width: 60px;
+    height: 60px;
+    transform: translateX(50%);
+    pointer-events: none;
+}
+
+.mail-animation {
+    animation: mail-bubble 3.5s forwards;
+}
+
 
 // Animations
 @keyframes move {
@@ -126,6 +142,33 @@ button {
 
     100% {
         background-position: 0% 0%;
+    }
+}
+
+@keyframes mail-bubble {
+    0% {
+        opacity: 0;
+        transform:
+            translateX(50%)
+            rotate(0);
+    }
+
+    25% {
+        opacity: 1;
+        transform:
+            translateX(0)
+            rotate(-45deg);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateX(800px)
+            rotate(800deg);
     }
 }
 

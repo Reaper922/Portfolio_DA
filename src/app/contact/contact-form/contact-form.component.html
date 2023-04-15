@@ -1,24 +1,40 @@
-<form autocomplete="off">
+<form (submit)="sendMail()" method="post"  autocomplete="off">
     <!-- Name -->
     <div class="input-container">
-        <input type="text" name="name" id="name" #name placeholder="Please enter your name." required autocomplete="new-password">
+        <input type="text"
+            name="name" id="name" #name
+            placeholder="Please enter your name."
+            minlength="4" required>
         <label for="name">Your name</label>
         <p id="name-error">Your name is required.</p>
     </div>
 
     <!-- Email -->
     <div class="input-container">
-        <input type="email" name="email" id="email" #email placeholder="Please enter your email." required>
+        <input type="email"
+            name="email" id="email" #email
+            placeholder="Please enter your email."
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            required>
         <label for="email">Your email</label>
         <p id="email-error">Your valid email is required.</p>
     </div>
 
     <!-- Message -->
     <div class="input-container">
-        <textarea name="message" id="message" #message cols="30" rows="10" placeholder="Please enter your message." required></textarea>
+        <textarea cols="30" rows="10"
+            name="message" id="message" #message
+            placeholder="Please enter your message." title=""
+            required></textarea>
         <label for="message">Your message</label>
         <p id="message-error">Your message is required.</p>
     </div>
 
-    <app-button [href]="'#'" [btnText]="'Say hello ;)'"></app-button>
+    <!-- Submit -->
+    <button type="submit" class="btn-primary"
+    [disabled]="!(isInputValid['name'] && isInputValid['email'] && isInputValid['message'])">
+    Get in touch</button>
+
+    <!-- Bubble -->
+    <img src="/assets/icons/mail_blue.svg" class="mail-bubble" id="bubble" #bubble>
 </form>
