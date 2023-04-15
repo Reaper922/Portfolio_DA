@@ -21,6 +21,8 @@ import { NavmenuComponent } from './hero/navmenu/navmenu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './pages/main/main.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
+import { SocialMediaHeaderComponent } from './hero/social-media-header/social-media-header.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.componen
     NavmenuComponent,
     MainComponent,
     LegalNoticeComponent,
+    SocialMediaHeaderComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
