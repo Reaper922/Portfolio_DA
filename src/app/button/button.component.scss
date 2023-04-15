@@ -1,16 +1,19 @@
 @import '/src/variables.scss';
 
 
-.btn-primary {
+@mixin btn($primary-btn-col, $secondary-btn-col) {
     display: inline-block;
     padding: 15px 30px;
-    color: $col-primary;
     font-size: $fs-24;
+    color: $primary-btn-col;
     text-decoration: none;
-    border: 2px solid $col-primary;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-    background: white linear-gradient(300deg, transparent 49%, $col-primary 51%);
+    background: $secondary-btn-col linear-gradient(
+        300deg,
+        transparent 49%,
+        $primary-btn-col 51%);
     background-position: 100% 100%;
     background-size: 400% 400%;
     transition: all 0.24s ease-in-out;
@@ -19,11 +22,11 @@
 
     &:hover,
     &:focus {
+        color: $secondary-btn-col;
+        background-color: $primary-btn-col;
         transform: scale(1.1);
-        color: white;
         outline: 2px solid $col-primary;
-        background-color: $col-primary;
-        animation: move 0.24s forwards;
+        animation: move-background 0.24s forwards;
     }
 
     &:active {
@@ -31,9 +34,19 @@
     }
 }
 
+.btn-primary {
+    @include btn($col-primary, white);
+    border: 2px solid $col-primary;
+}
+
+.btn-secondary {
+    @include btn(white, $col-primary);
+    border: none;
+}
+
 
 // Animations
-@keyframes move {
+@keyframes move-background {
     0% {
         background-position: 100% 100%;
     }
@@ -46,7 +59,16 @@
 
 // Media
 @media screen and (max-width: $m-mobile-md) {
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
         padding: 12px 24px
+    }
+}
+
+@media screen and (max-width: $m-mobile-sm) {
+    .btn-primary,
+    .btn-secondary {
+        width: calc(100% - 48px);
+        font-size: $fs-18;
     }
 }
