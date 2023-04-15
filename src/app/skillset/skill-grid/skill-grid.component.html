@@ -1,42 +1,6 @@
 <div class="skill-grid">
-    <div class="skill">
-        <img src="/assets/icons/angular_white.svg" alt="Angular Icon" draggable="false">
-        <p>Angular</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/typescript_white.svg" alt="TypeScript Icon" draggable="false">
-        <p>TypeScript</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/javascript_white.svg" alt="JavaScript Icon" draggable="false">
-        <p>JavaScript</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/html_white.svg" alt="HTML Icon" draggable="false">
-        <p>HTML</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/scrum_white.svg" alt="Scrum Icon" draggable="false">
-        <p>Scrum</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/firebase_white.svg" alt="Firebase Icon" draggable="false">
-        <p>Firebase</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/git_white.svg" alt="GIT Icon" draggable="false">
-        <p>GIT</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/css_white.svg" alt="CSS Icon" draggable="false">
-        <p>CSS</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/rest-api_white.svg" alt="Rest-API Icon" draggable="false">
-        <p>Rest-API</p>
-    </div>
-    <div class="skill">
-        <img src="/assets/icons/material-design_white.svg" alt="Material Design Icon" draggable="false">
-        <p>Material<br>Design</p>
+    <div class="skill" *ngFor="let skill of skills">
+        <img [src]="skill.iconUrl" [alt]="skill.alt" draggable="false">
+        <p>{{ skill.skill }}</p>
     </div>
 </div>
