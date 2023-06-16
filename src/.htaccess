@@ -1,0 +1,3 @@
+<FilesMatch "\\.(js|css|html|htm|php|xml|svg|json|txt|csv)$">
+SetOutputFilter BROTLI_COMPRESS
+</FilesMatch>
