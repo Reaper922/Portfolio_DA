@@ -1,6 +1,6 @@
 <div class="skill-grid">
     <div class="skill" *ngFor="let skill of skills">
-        <img [src]="skill.iconUrl" [alt]="skill.alt" draggable="false">
+        <img [src]="skill.iconUrl" [alt]="skill.alt" draggable="false" loading="lazy">
         <p>{{ skill.skill }}</p>
     </div>
 </div>

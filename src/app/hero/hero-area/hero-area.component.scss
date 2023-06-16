@@ -6,6 +6,7 @@ header {
     position: relative;
     height: 100dvh;
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, $col-primary-light 91.39%);
+    overflow-x: clip;
 }
 
 app-navmenu {
@@ -198,8 +199,19 @@ app-bubble:nth-of-type(2) {
 @media screen and (max-width: 620px) {
     app-bubble:nth-of-type(1) {
         @include app-bubble(
-            $size: 155dvw,
+            $size: max(155dvw, 590px),
             $top: -6dvh,
+            $left: -220px,
+            $index: 0);
+        clip: rect(0px 400dvw 106dvh 0px);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    app-bubble:nth-of-type(1) {
+        @include app-bubble(
+            $size: max(155dvw, 590px),
+            $top: calc(-150px + 10dvh),
             $left: -220px,
             $index: 0);
         clip: rect(0px 400dvw 106dvh 0px);

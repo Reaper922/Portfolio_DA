@@ -14,7 +14,7 @@ export class ProjectsAreaComponent {
       description: "A task manager inspired by the Kanban method. You can create and organize tasks using drag and drop, assign tasks to users and define subtasks.",
       github: "https://github.com/Reaper922/Join_DA",
       projectUrl: 'https://join.dennisammen.de',
-      prevImageUrl: "/assets/img/join.jpg"
+      prevImageUrl: "/assets/img/join.webp"
     },
     {
       title: "Captain Clown Nose",
@@ -22,7 +22,7 @@ export class ProjectsAreaComponent {
       description: "A pirate themed jump and run game implemented using the object-oriented approach. Try your luck and collect all coins!",
       github: "https://github.com/Reaper922/PirateGame_DA",
       projectUrl: 'https://game.dennisammen.de',
-      prevImageUrl: "/assets/img/captain_clown_nose.jpg"
+      prevImageUrl: "/assets/img/captain_clown_nose.webp"
     },
     {
       title: "Pokedex",
@@ -30,10 +30,10 @@ export class ProjectsAreaComponent {
       description: "A simple to use Pokedex App which fetches the data for all Pokemon of the first generation from the PokeAPI.",
       github: "https://github.com/Reaper922/Pokedex_DA",
       projectUrl: 'https://pokedex.dennisammen.de',
-      prevImageUrl: "/assets/img/pokedex.jpg"
+      prevImageUrl: "/assets/img/pokedex.webp"
     },
     {
-      title: "CRM",
+      title: "Slack Clone",
       stack: "Angular | TypeScript | HTML | CSS | Firebase",
       description: "Coming Soon",
       github: "https://github.com/Reaper922/",

@@ -1,7 +1,7 @@
 <div class="project-container" [class.odd]="isSecondElement"
     data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
     <div class="image-container">
-        <img [src]="project.prevImageUrl" alt="Project Preview Image" draggable="false">
+        <img [src]="project.prevImageUrl" alt="Project Preview Image" draggable="false" loading="lazy">
         <app-button btnText="Live test" [href]="project.projectUrl" [target]="'_blank'" [style]="'secondary'"></app-button>
     </div>
     <div>
