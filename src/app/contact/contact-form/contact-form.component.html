@@ -14,7 +14,7 @@
         <input type="email"
             name="email" id="email" #email
             placeholder="Please enter your email."
-            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            pattern="^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$"
             required>
         <label for="email">Your email</label>
         <p id="email-error">Your valid email is required.</p>
